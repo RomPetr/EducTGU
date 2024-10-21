@@ -49,7 +49,7 @@ elif choise == "4":
     if (isinstance(rez, str)):
         print(rez)
     else:
-        print(f"Результат: {num1} / {num2} = {rez}")
+        print(f"Результат: {num1} / {num2} = {rez:.2f}")
 """
 # -----Телефонный справочник------
 contacts = {}
