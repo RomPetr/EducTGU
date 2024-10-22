@@ -1,3 +1,5 @@
+# Телефонный справочник Функции
+
 contacts = {}
 
 def input_contact():
