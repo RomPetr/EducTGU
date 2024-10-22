@@ -76,11 +76,12 @@ for i in range(3):
     t.forward(60)
     t.end_fill()
 """
+
 """
 2.  Используя методы модуля turtle, нарисуйте несколько геометрических фигур: 
 прямоугольник, ромб и трапецию. Каждая фигура должна быть закрашена в свой цвет, 
 который сочетается с остальными. Используйте цветовой круг Adobe для выбора красивого сочетания цветов.
-"""
+
 import turtle as t
 
 len = 100
@@ -147,9 +148,8 @@ for i in range(4):
 
 t.end_fill()
 
-"""
 3.  Нарисуйте зеленую елку из трех закрашенных треугольников.
-"""
+
 import turtle as t
 
 len = 100
@@ -183,19 +183,22 @@ for i in range(3):
   t.forward(len)
   t.left(tri)
 t.end_fill()
+"""
 
 """
 4.  Нарисуйте три квадрата размером 30 на 30 на расстоянии 30 пикселей друг от друга. 
 Квадраты не должны соединятся зеленой линией.
 """
 import turtle as t
+t.colormode(255)
 
 t.up()
 t.goto(-100, 0)
 t.down()
+t.pensize(5)
 # квадрат
 t.begin_fill()
-t.color("red")
+t.color('red', 'blue')
 for i in range(4):
   t.forward(30)
   t.left(90)
@@ -206,7 +209,7 @@ t.goto(-40, 0)
 t.down()
 # квадрат
 t.begin_fill()
-t.color("yellow")
+t.color(255, 127, 80)
 for i in range(4):
   t.forward(30)
   t.left(90)
@@ -217,8 +220,10 @@ t.forward(60)
 t.down()
 # квадрат
 t.begin_fill()
-t.color("green")
+t.color("green", "black")
 for i in range(4):
   t.forward(30)
   t.left(90)
 t.end_fill()
+
+t.done()
