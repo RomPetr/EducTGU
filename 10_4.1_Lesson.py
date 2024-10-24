@@ -99,6 +99,7 @@ btn.pack(pady=[10,10])
 window.mainloop()
 """
 
+
 # фреймы
 import re
 from tkinter import *
@@ -118,3 +119,4 @@ name_entry.pack(anchor=NW)
 frame.pack(anchor=NW, fill=X, padx=5, pady=5)
 
 root.mainloop()
+

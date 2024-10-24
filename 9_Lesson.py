@@ -34,17 +34,17 @@ print("2. Вычитание")
 print("3. Умножение")
 print("4. Деление")
 
-choise = input("Введите номер операцим (1/2/3/4):")
+choice = input("Введите номер операцим (1/2/3/4):")
 num1 = int(input("Введите первое число: "))
 num2 = int(input("Введите второе число: "))
 
-if choise == "1":
+if choice == "1":
     print(f"Результат: {num1} + {num2} = {add(num1, num2)}")
-elif choise == "2":
+elif choice == "2":
     print(f"Результат: {num1} - {num2} = {sub(num1, num2)}")
-elif choise == "3":
+elif choice == "3":
     print(f"Результат: {num1} * {num2} = {mul(num1, num2)}")
-elif choise == "4":
+elif choice == "4":
     rez = div(num1, num2)
     if (isinstance(rez, str)):
         print(rez)

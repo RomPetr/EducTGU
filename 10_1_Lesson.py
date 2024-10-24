@@ -71,6 +71,8 @@ b = Button(text="Ввод", bg="grey", font="Courier 12 bold", command=read)
 b.pack(side=LEFT)
 window.mainloop()
 """
+
+
 # многострочное текстовое поле
 
 def read():
@@ -79,10 +81,10 @@ def read():
 
 def insert():
     pushkin = "Я помню чудное мгновенье: передо мной явилась ты, \
-        как мимолетное виденье, как гений чистой красоты. \
-        В томленьях грусти безнадежной, \
-        в тревогах шумной суеты, звучал мне долго голос нежный \
-        и снились милые черты."
+    как мимолетное виденье, как гений чистой красоты. \
+    В томленьях грусти безнадежной, \
+    в тревогах шумной суеты, звучал мне долго голос нежный \
+    и снились милые черты."
     T = text.insert(1.0, pushkin)
     print(T)
 
@@ -96,9 +98,9 @@ scroll = Scrollbar(command=text.yview)
 scroll.pack(side=LEFT, fill=Y)
 text.config(yscrollcommand=scroll.set)
 b = Button(text="ввод", command=read)
-b.pack()
+b.pack(side=LEFT)
 b2 = Button(text="вставка", command=insert)
 b2.pack(side=LEFT)
-b3 = Button(text='Удаление текста', command=delete)
+b3 = Button(text='удаление текста', command=delete)
 b3.pack(side=LEFT)
 window.mainloop()
