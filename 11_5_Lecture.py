@@ -91,3 +91,4 @@ rez = Label(window, font=("Arial", 14))
 rez.pack()
 window.mainloop()
 """
+

@@ -21,6 +21,7 @@ def summ():
     summa = slag_1 + slag_2 + slag_3
     m1['text'] = f"{s1} + {s2} + {s3} = {summa}"
 
+
     answer = mb.askretrycancel(title='Вопрос', message='Сложить еще три числа?')
     if answer:
         e1.delete(0, END)
