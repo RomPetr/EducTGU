@@ -4,7 +4,7 @@ contacts = {}
 
 def input_contact():
     name = input("Введите имя: ")
-    phone = input("Введите десятизначный номер телефона начинающийся с 91: ")
+    phone = input("Введите десятизначный номер телефона начинающийся с 9: ")
     if len(phone) == 10 and phone.isdigit() and phone.startswith('9'):
         contacts[name] = phone
         print("Контакт успешно добавлен")

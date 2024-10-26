@@ -51,6 +51,8 @@ elif choice == "4":
     else:
         print(f"Результат: {num1} / {num2} = {rez:.2f}")
 """
+
+"""
 # -----Телефонный справочник------
 contacts = {}
 
@@ -87,11 +89,10 @@ while True:
         delete_contact()
     elif action == "4":
         break
-
-
-
-# работа с файлами
 """
+
+"""
+# работа с файлами
 try:
     file = open("TestFile.txt", "r", encoding = "utf-8")
     content = file.read()
