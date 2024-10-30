@@ -19,7 +19,7 @@ def set():
             dt = now.replace(hour=hour, minute=minute, second=0)
             print(dt)
             t = dt.timestamp()
-            print(t)
+            # print(t)
         except Exception as e:
             mb.showerror("Ошибка", f"Произошла ошибка {e}")
 
