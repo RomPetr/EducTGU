@@ -46,14 +46,15 @@ def play_snd():
 def stop_music():
     global music
     if music:
-        playgame.mixer.music.stop()
+        pygame.mixer.music.stop()
         music = False
     label.config(text="Установить новое напоминание")
 
 
 window = Tk()
 window.title("Напоминание")
-label = Label(text="Установите напоминание")
+window.geometry("245x150")
+label = Label(text="Установите напоминание", font=("Arial", 12))
 label.pack(pady=10)
 set_button = Button(text="Установить напоминание", font=("Arial", 10), command=set)
 set_button.pack(pady=10)
