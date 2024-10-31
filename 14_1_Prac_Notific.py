@@ -6,7 +6,7 @@ import time
 import pygame
 
 t = 0
-music = False
+music = False # Переменная для отслеживания проигрывания музыки
 
 def set():
     global t
@@ -67,3 +67,4 @@ stop_button.pack(pady=10)
 check()
 
 window.mainloop()
+
