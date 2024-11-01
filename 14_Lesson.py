@@ -34,9 +34,8 @@ def check_time():
         if now >= r_time:
             # print("Играет музыка")
             play_music()
-            r_time = None
+            r_time = 0
         window.after(5000, check_time)
-
 
 
 def play_music():
@@ -64,8 +63,8 @@ height_d = window.winfo_screenheight()
 # print(width_d, height_d)
 window.geometry(f"300x200+{width_d//2-150}+{height_d//2-100}")
 
-l = Label(window, text="--Нажмите на кнопку и установите\n напоминание на любое время--")
-l.pack(pady=5)
+lab = Label(window, text="--Нажмите на кнопку и установите\n напоминание на любое время--")
+lab.pack(pady=5)
 
 btn = Button(window, text="Установить напоминание", command=set_reminder)
 btn.pack(pady=5)
