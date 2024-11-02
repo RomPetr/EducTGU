@@ -5,9 +5,12 @@ from tkinter import simpledialog as sd
 from tkinter import messagebox as mb
 import pygame
 
+text_rem = '' # Global variable for reminder text
+music = False
+r_time = 0
 
 def set_reminder():
-    global r_time
+    global r_time, text_rem
     time_reminder = sd.askstring(title="Время напоминания", prompt="Введите время в формате ЧЧ:ММ")
     if time_reminder:
         try:
@@ -19,6 +22,10 @@ def set_reminder():
             r_time = now_time.replace(hour=hour, minute=minute, second=0)
             print(r_time)
             r_time = r_time.timestamp()
+            '''
+            в следующей строке предлагается ввести текст напоминания
+            '''
+            text_rem = sd.askstring("Текст напоминания", "Введите текст напоминания.")
             mb.showinfo(title="Успех", message=f"Напоминание установлено на {hour}:{minute}")
             check_time()
         except ValueError:
@@ -44,6 +51,7 @@ def play_music():
     pygame.mixer.music.load("reminder.mp3")
     pygame.mixer.music.play()
     music = True
+    show_reminder()
 
 
 def stop_music():
@@ -51,10 +59,12 @@ def stop_music():
     if music:
         pygame.mixer.music.stop()
         music = False
+    lab.config(text="Установить новое напоминание")
 
 
-music = False
-r_time = 0
+def show_reminder():
+    global text_rem
+    mb.showinfo(title="Напоминание", message=text_rem)
 
 window = Tk()
 window.title("Напоминалка")

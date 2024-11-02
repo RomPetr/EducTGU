@@ -7,7 +7,9 @@ first = 0
 second = 0
 result = 0
 
+
 def calc():
+    global second, result
     second = float(entry.get())
     if oper == '+':
         result = c.add(first, second)
