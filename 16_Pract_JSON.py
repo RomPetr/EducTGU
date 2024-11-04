@@ -36,10 +36,11 @@ def exchange():
             response = requests.get(f'https://open.er-api.com/v6/latest/{base_code}')
             response.raise_for_status() # Проверяем, не произошла ли ошибка HTTP
             data = response.json()
+            # print(data)
 
             if target_code in data['rates']:
                 exchange_rate = data['rates'][target_code]
-                base = currencies[ base_code]
+                base = currencies[base_code]
                 target = currencies[target_code]
                 mb.showinfo("Курс обмена", f"Курс: {exchange_rate:.2f} {target} за 1 {base}")
             else:
