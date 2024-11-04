@@ -54,6 +54,7 @@ cur = {
     'USD': 'Американский доллар'
 }
 
+
 window = Tk()
 window.title("Курсы обмена валют")
 window.geometry("360x180")
