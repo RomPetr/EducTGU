@@ -21,6 +21,12 @@ def update_currency_label(event):
     currency_label.config(text=name)
 
 
+def update_base_label(event):
+    # Получаем полное название валюты из словаря и обновляем метку
+    code = base_combobox.get()
+    name = currencies[code]
+    base_label.config(text=name)
+
 def exchange():
     target_code = target_combobox.get()
     base_code = base_combobox.get()
@@ -61,11 +67,15 @@ currencies = {
 # Создание графического интерфейса
 window = Tk()
 window.title("Курсы обмена валют")
-window.geometry("360x240")
+window.geometry("360x260")
 
 Label(text="Базовая валюта:").pack(padx=10, pady=5)
 base_combobox = ttk.Combobox(values=list(currencies.keys()))
 base_combobox.pack(padx=10, pady=5)
+base_combobox.bind("<<ComboboxSelected>>", update_base_label)
+
+base_label = ttk.Label()
+base_label.pack(padx=10, pady=10)
 
 Label(text="Целевая валюта:").pack(padx=10, pady=5)
 target_combobox = ttk.Combobox(values=list(currencies.keys()))
