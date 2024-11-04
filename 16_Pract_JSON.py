@@ -62,6 +62,7 @@ Label(text="Выберите код валюты").pack(padx=10, pady=10)
 
 # Список 10 популярных валют
 # popular_currencies = ["EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "RUB", "KZT", "UZS"]
+
 combobox = ttk.Combobox(values=list(cur.keys()))
 combobox.pack(padx=10, pady=10)
 combobox.bind("<<ComboboxSelected>>", update_c_label)
