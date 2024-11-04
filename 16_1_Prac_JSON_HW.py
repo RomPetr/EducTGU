@@ -10,4 +10,15 @@ import json
 from tkinter import *
 from tkinter import messagebox as mb
 from tkinter import ttk
+import pprint
 
+"""
+# --------------------------------------
+# Получение курсов Топ 50 криптовалют из CoinGecko.com
+url = "https://api.coingecko.com/api/v3/coins/markets"
+response = requests.get(url, params={'vs_currency': 'usd', 'per_page': 50, 'page': 1})
+data = json.loads(response.text)
+p = pprint.PrettyPrinter(indent=3)
+p.pprint(data)
+# -------------------------------------
+"""
