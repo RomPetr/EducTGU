@@ -15,28 +15,26 @@ p.pprint(data)
 
 
 def update_c_label(event):
-    code = t_combobox.get()
+    code = combobox.get()
     name = cur[code]
     c_label.config(text=name)
 
 
 
 def exchange():
-    t_code = t_combobox.get()
-    b_code = b_combobox.get()
+    code = combobox.get()
 
-    if t_code and b_code:
+    if code:
         try:
-            response = requests.get(f'https://open.er-api.com/v6/latest/{b_code}')
+            response = requests.get('https://open.er-api.com/v6/latest/USD')
             response.raise_for_status() # Проверяем, не произошла ли ошибка HTTP
             data = response.json()
-            if t_code in data['rates']:
-                exchange_rate = data['rates'][t_code]
-                t_name = cur[t_code]
-                b_name = cur[b_code]
-                mb.showinfo("Курс обмена", f"Курс: {exchange_rate:.2f} {t_name} за 1 {b_name}")
+            if code in data['rates']:
+                exchange_rate = data['rates'][code]
+                c_name = cur[code]
+                mb.showinfo("Курс обмена", f"Курс: {exchange_rate:.2f} {c_name} за 1 доллар")
             else:
-                mb.showerror("Ошибка", f"Валюта {t_code} не найдена!")
+                mb.showerror("Ошибка", f"Валюта {code} не найдена!")
         except Exception as e:
             mb.showerror("Ошибка", f"Произошла ошибка: {e}.")
     else:
@@ -58,20 +56,19 @@ cur = {
 
 window = Tk()
 window.title("Курсы обмена валют")
-window.geometry("360x260")
+window.geometry("360x180")
 
-Label(text="Базовая валюта").pack(padx=10, pady=10)
-b_combobox = ttk.Combobox(values=list(cur.keys()))
-b_combobox.pack(padx=10, pady=10)
+Label(text="Выберите код валюты").pack(padx=10, pady=10)
 
-Label(text="Целевая валюта").pack(padx=10, pady=10)
-t_combobox = ttk.Combobox(values=list(cur.keys()))
-t_combobox.pack(padx=10, pady=10)
-t_combobox.bind("<<ComboboxSelected>>", update_c_label)
+# Список 10 популярных валют
+# popular_currencies = ["EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "RUB", "KZT", "UZS"]
+combobox = ttk.Combobox(values=list(cur.keys()))
+combobox.pack(padx=10, pady=10)
+combobox.bind("<<ComboboxSelected>>", update_c_label)
 
 c_label = ttk.Label()
 c_label.pack(padx=10, pady=10)
 
-Button(text="Получить курс обмена", command=exchange).pack(padx=10, pady=10)
+Button(text="Получить курс обмена к доллару", command=exchange).pack(padx=10, pady=10)
 
 window.mainloop()
