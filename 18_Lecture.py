@@ -37,6 +37,23 @@ def load_file():
         mb.showerror("Ошибка", f"Ошибка: {exc}")
 
 
+def show_history():
+    if not os.path.exists("History.json"):
+        mb.showinfo("Информация", "Файла истории пока нет")
+        return
+
+    history_window = Toplevel()
+
+    list_f = Listbox(history_window)
+    list_f.pack()
+
+    with open("History.json", "r") as file:
+        hist_link = json.load(file)
+        for i in hist_link:
+            list_f.insert(END, i['link_file'])
+
+
+
 
 window = Tk()
 window.title("Обмен файлами")
@@ -48,5 +65,8 @@ btn.pack(pady=10)
 
 e = Entry(window, font=('Arial', 12))
 e.pack(pady=10)
+
+btn1 = Button(window, text="Посмотреть историю", font=("Arial", 10), command=show_history)
+btn1.pack(pady=10)
 
 window.mainloop()
