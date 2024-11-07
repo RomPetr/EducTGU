@@ -48,7 +48,7 @@ def show_history():
     history_window.title("История загрузок")
 
     files_listbox = Listbox(history_window, width=50, height=20)
-    files_listbox.grid(row=0, column=1, padx=(10, 0), pady=10)
+    files_listbox.grid(row=0, column=0, padx=(10, 0), pady=10)
 
     links_listbox = Listbox(history_window, width=50, height=20)
     links_listbox.grid(row=0, column=1, padx=(0, 10), pady=10)
